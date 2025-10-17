@@ -1,0 +1,81 @@
+:root {
+  --bg-body: #f2f4f8;
+  --title-color: #191b23;
+  --text-color: #3c404f;
+  --btn_bg:#fff;
+  
+}
+.dark-theme {
+  --bg-body: #1e1f26;
+  --title-color: #f0f0f0;
+  --text-color: #b0b3c0;
+  --btn_bg:#2c2f38;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    margin: 32px;
+    background-color: var(--bg-body);
+    color: var(--text-color);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.title{
+    color: var(--title-color);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.add_btn{
+    background: #8b90ff;
+    color: white;
+    border: none;
+    padding: 12px 24px; 
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+.theme_btn{
+    background: var(--btn_bg);
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 16px;
+    font-size: 16px;
+}
+.theme_btn:hover{
+    background: #8b90ff;
+}
+.note_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+.note_state{
+    text-align: center;
+    padding: 64px 32px;
+}
+.note_state h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.note_state p {
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+.icon-dark {
+  display: none;
+}
