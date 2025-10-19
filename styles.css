@@ -2,84 +2,208 @@
   --bg-body: #f2f4f8;
   --title-color: #191b23;
   --text-color: #3c404f;
-  --btn_bg:#fff;
-  
+  --btn_bg: #fff;
 }
 .dark-theme {
   --bg-body: #1e1f26;
   --title-color: #f0f0f0;
   --text-color: #b0b3c0;
-  --btn_bg:#2c2f38;
+  --btn_bg: #2c2f38;
+  --base-transparent-90: rgba(30, 31, 38, 0.9);
+  --base-transparent-100: rgba(30, 31, 38, 1);
+}
+button {
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 32px;
+  background-color: var(--bg-body);
+  color: var(--text-color);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.title {
+  color: var(--title-color);
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.add_btn {
+  background: #8b90ff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+.add_btn:hover {
+  background: #7a7fff;
 }
-body{
-    margin: 32px;
-    background-color: var(--bg-body);
-    color: var(--text-color);
+.theme_btn {
+  background: var(--btn_bg);
+  border: 1px solid #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 16px;
+  font-size: 16px;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
+.theme_btn:hover {
+  background: #8b90ff;
 }
-.title{
-    color: var(--title-color);
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 16px;
+.note_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
 }
-.add_btn{
-    background: #8b90ff;
-    color: white;
-    border: none;
-    padding: 12px 24px; 
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.add_btn:hover{
-    background: #7a7fff;
-}
-.theme_btn{
-    background: var(--btn_bg);
-    border: 1px solid #fff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    margin-left: 16px;
-    font-size: 16px;
-}
-.theme_btn:hover{
-    background: #8b90ff;
-}
-.note_grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-}
-.note_state{
-    text-align: center;
-    padding: 64px 32px;
+.note_state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 32px;
 }
 .note_state h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-    font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 .note_state p {
-    font-size: 16px;
-    margin-bottom: 32px;
+  font-size: 16px;
+  margin-bottom: 32px;
 }
 .icon-dark {
   display: none;
+}
+
+dialog {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px;
+  max-width: 500px;
+  width: 90vw;
+  border-radius: 16px;
+  border: none;
+}
+.dialog_header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+dialog label {
+  margin-bottom: 8px;
+}
+.dialog_input {
+  display: flex;
+  flex-direction: column;
+}
+.dialog_input input,
+.dialog_input textarea {
+  background-color: #f2f4f8;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.dialog_body {
+  margin-bottom: 24px;
+}
+.dialog_footer {
+  display: flex;
+  justify-content: end;
+  gap: 16px;
+}
+.dialog_footer button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+}
+.cancel_btn {
+  color: #191b23;
+}
+.save_btn {
+  color: white;
+  background-color: #8b90ff;
+}
+.close_btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+.dialog_header div {
+  font-size: 24px;
+  font-weight: 600;
+}
+.note-card {
+  background: var(--btn_bg);
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid var(--btn_bg);
+  transition: all 0.2s ease;
+  position: relative;
+}
+.note-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+.note-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-color);
+  word-wrap: break-word;
+}
+.note-actions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+.edit-btn,
+.delete-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  background: var(--base-transparent-90);
+  color: var(--text-color);
+  border: 1px solid var(--btn_bg);
+}
+.edit-btn:hover {
+  background: var(--base-transparent-100);
+  transform: scale(1.05);
+}
+.delete-btn:hover {
+  background: var(--base-transparent-100);
+  transform: scale(1.05);
+}
+.note-card:hover .note-actions {
+  opacity: 1;
+  visibility: visible;
 }
